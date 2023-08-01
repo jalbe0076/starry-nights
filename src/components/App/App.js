@@ -1,7 +1,7 @@
-import logo from '../../logo.svg';
 import './App.scss';
 import { useEffect, useState } from 'react';
-import { getPictureOfDay } from '../../apiCalls';
+import { getPictureOfDay, getIncomingNearEarthObjects } from '../../apiCalls';
+import IncomingObjects from '../IncomingObjects/IncomingObjects';
 
 function App() { 
   const [imageOfDay, setImageOfDay] = useState('');
@@ -11,19 +11,24 @@ function App() {
     (async() => {
       try {
         const data = await getPictureOfDay();
-        console.log(data.url)
         setImageOfDay(data.url)
       } catch (error) {
-        console.log(error)
-        setNetworkError(error.message)
+        handleNetworkErrors(error)
       }
     })();
   }, []);
 
+  const handleNetworkErrors = (error) => {
+    setNetworkError(error.message)
+  }
+
   return (
     <div className="App">
       {!networkError ? 
-        <img src={imageOfDay} className="App-logo" alt="logo" />
+        <main>
+          <img src={imageOfDay} className="App-logo" alt="logo" />
+          <IncomingObjects handleNetworkErrors={handleNetworkErrors} />
+        </main>
         : <h2>{networkError}</h2>
       }
     </div>
