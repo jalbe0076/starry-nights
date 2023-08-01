@@ -32,5 +32,5 @@ const IncomingObjects = ({ handleNetworkErrors }) => {
 export default IncomingObjects;
 
 IncomingObjects.propTypes = {
-  setFutureDate: PropTypes.func.isRequired
+  handleNetworkErrors: PropTypes.func.isRequired
 }
