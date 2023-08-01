@@ -14,6 +14,7 @@ function App() {
         console.log(data.url)
         setImageOfDay(data.url)
       } catch (error) {
+        console.log(error)
         setNetworkError(error.message)
       }
     })();
@@ -21,7 +22,10 @@ function App() {
 
   return (
     <div className="App">
+      {!networkError ? 
         <img src={imageOfDay} className="App-logo" alt="logo" />
+        : <h2>{networkError}</h2>
+      }
     </div>
   );
 }
