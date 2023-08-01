@@ -1,23 +1,27 @@
 import logo from '../../logo.svg';
 import './App.scss';
+import { useEffect, useState } from 'react';
+import { getPictureOfDay } from '../../apiCalls';
 
-function App() {
+function App() { 
+  const [imageOfDay, setImageOfDay] = useState('');
+  const [networkError, setNetworkError] = useState(false)
+
+  useEffect(() => {
+    (async() => {
+      try {
+        const data = await getPictureOfDay();
+        console.log(data.url)
+        setImageOfDay(data.url)
+      } catch (error) {
+        setNetworkError(error.message)
+      }
+    })();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <img src={imageOfDay} className="App-logo" alt="logo" />
     </div>
   );
 }
