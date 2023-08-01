@@ -2,21 +2,38 @@
   color: var(--active-tab-color);
 }
 
-header {
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
 
-  .nav--links {
-    color: var(--primary-contrast-color);
+  .title {
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    // color: var(--primary-contrast-color);
     text-decoration: none;
     font-weight: 600;
   }
 
-  nav {
+  .nav-tabs {
     display: flex;
     gap: 1em;
+  }
+}
+
+@media (max-width: 750px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+
+    .nav-tabs {
+      flex-direction: column;
+    }
   }
 }
 

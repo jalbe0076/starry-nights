@@ -1,20 +1,17 @@
-import './ImageOfDay';
+import './ImageOfDay.scss';
 import { useEffect, useState } from 'react';
 import { getPictureOfDay } from '../../apiCalls';
 import PropTypes from 'prop-types'
 
 const ImageOfDay = ({handleNetworkErrors}) => {
-  const [imageOfDay, setImageOfDay] = useState({
-    url: '',
-    title: '',
-    explanation: ''
-  });
+  const [imageOfDay, setImageOfDay] = useState({});
 
   useEffect(() => {
     (async() => {
       try {
         const data = await getPictureOfDay();
         setImageOfDay(data)
+        console.log(data)
       } catch (error) {
         handleNetworkErrors(error)
       }

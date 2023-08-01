@@ -4,6 +4,7 @@ import { getPictureOfDay, getIncomingNearEarthObjects } from '../../apiCalls';
 import IncomingObjects from '../IncomingObjects/IncomingObjects';
 import Nav from '../Nav/Nav';
 import ImageOfDay from '../ImageOfDay/ImageOfDay';
+import { Routes, Route } from 'react-router-dom'
 
 function App() { 
   const [networkError, setNetworkError] = useState(false)
@@ -14,14 +15,14 @@ function App() {
 
   return (
     <div className="app">
+      <Nav />
       {!networkError ? 
-        <>
-          <Nav />
-          <main>
-            <ImageOfDay handleNetworkErrors={handleNetworkErrors} />
-            <IncomingObjects handleNetworkErrors={handleNetworkErrors} />
-          </main>
-        </>
+        <main>
+          <Routes>
+            <Route path='/' element={<ImageOfDay handleNetworkErrors={handleNetworkErrors}/>} />
+            <Route path='stargazing-events' element={<IncomingObjects handleNetworkErrors={handleNetworkErrors} />} />
+          </Routes>
+        </main>
         : <h2>{networkError}</h2>
       }
     </div>
