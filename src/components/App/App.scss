@@ -1,7 +1,9 @@
 :root {
-  --active-tab-color: red;
-  --primary-contrast-color: #f9f9f9;
-  --primary-dark-color: #121212;
+  --active-tab-color: rgb(229, 221, 173);
+  --hover-tab-color: rgb(236, 218, 119);
+  --primary-contrast-color: rgb(249, 249, 249);
+  --primary-dark-color: rgb(18, 18, 18);
+  --primary-dark-tranparent: 18, 18, 18;
 }
 
 * {
@@ -20,4 +22,10 @@
 body {
   background: url(../../../public/images/main-background.jpg) var(--primary-dark-color);
   background-size: cover;
+}
+
+@media (max-width: 375px) {
+  .app {
+    padding: 0 0.8em
+  }
 }
