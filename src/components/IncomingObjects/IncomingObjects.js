@@ -1,6 +1,7 @@
 import './IncomingObjects.scss';
 import { getIncomingNearEarthObjects } from '../../apiCalls';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const IncomingObjects = ({ handleNetworkErrors }) => {
   
@@ -29,3 +30,7 @@ const IncomingObjects = ({ handleNetworkErrors }) => {
 };
 
 export default IncomingObjects;
+
+IncomingObjects.propTypes = {
+  setFutureDate: PropTypes.func.isRequired
+}
