@@ -22,7 +22,7 @@ function App() {
           <Routes>
             <Route path='/' element={<ImageOfDay handleNetworkErrors={handleNetworkErrors}/>} />
             <Route path='stargazing-events' element={<IncomingObjects handleNetworkErrors={handleNetworkErrors} />} />
-            <Route path='stargazing-events/:id' element={<EventDetails handleNetworkErrors={handleNetworkErrors} />} />
+            <Route path='stargazing-events/:jd/:des' element={<EventDetails handleNetworkErrors={handleNetworkErrors} />} />
           </Routes>
         </main>
         : <h2>{networkError}</h2>

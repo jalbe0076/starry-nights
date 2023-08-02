@@ -9,7 +9,7 @@ const EventList = ({data, id}) => {
 
   const handleClick = () => {
     console.log(id)
-    navigate(`/stargazing-events/${id}`)
+    navigate(`/stargazing-events/${data[2]}/${data[0]}`)
   }
 
   return (

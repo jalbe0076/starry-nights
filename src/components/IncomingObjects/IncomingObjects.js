@@ -3,6 +3,7 @@ import { getIncomingNearEarthObjects } from '../../apiCalls';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import EventList from '../EventList/EventList';
+import { nanoid } from 'nanoid';
 
 const IncomingObjects = ({ handleNetworkErrors }) => {
   const [incomingObjects, setIncomingObjects] = useState([]);
@@ -22,8 +23,9 @@ const IncomingObjects = ({ handleNetworkErrors }) => {
   }, []);
 
   const objectEventList = incomingObjects.data && incomingObjects.data.map((event, i) => {
+    const id = nanoid();
     return (
-      <EventList data={event} key={i} id={i} />
+      <EventList data={event} key={id} id={id} />
     );
   });
 
@@ -32,10 +34,6 @@ const IncomingObjects = ({ handleNetworkErrors }) => {
     const date = new Date()
     date.setDate(date.getDate() + 60)
     return date.toLocaleDateString('en-CA');
-  }
-
-  const handleExpandInfo = () => {
-    setExpandedInfo(current => !current)
   }
 
   return(
