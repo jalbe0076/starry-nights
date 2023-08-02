@@ -1,5 +1,6 @@
 import './EventDetails.scss';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const EventDetails = ({ eventDetails }) => {
   const [expandedInfo, setExpandedInfo] = useState(true);
@@ -46,3 +47,7 @@ const EventDetails = ({ eventDetails }) => {
 }
 
 export default EventDetails;
+
+EventDetails.propTypes = {
+  eventDetails: PropTypes.arrayOf(PropTypes.string).isRequired
+}

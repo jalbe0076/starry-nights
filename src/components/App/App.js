@@ -1,6 +1,5 @@
 import './App.scss';
-import { useEffect, useState } from 'react';
-import { getPictureOfDay, getIncomingNearEarthObjects } from '../../apiCalls';
+import { useState } from 'react';
 import IncomingObjects from '../IncomingObjects/IncomingObjects';
 import Nav from '../Nav/Nav';
 import EventDetails from '../EventDetails/EventDetails';
@@ -16,10 +15,9 @@ function App() {
   }
 
   const handleEvent = (data) => {
-    (async() => {
-      await setEventDetails(data);
-    })()
-    console.log(eventDetails)
+
+      setEventDetails(data);
+
   }
 
   return (

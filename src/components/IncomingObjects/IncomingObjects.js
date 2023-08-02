@@ -7,14 +7,12 @@ import { nanoid } from 'nanoid';
 
 const IncomingObjects = ({ handleNetworkErrors, handleEvent }) => {
   const [incomingObjects, setIncomingObjects] = useState([]);
-  const [expandedInfo, setExpandedInfo] = useState(true);
   
   useEffect(() => {
     (async() => {
       try {
         const futureDate = setFutureDate();
         const data = await getIncomingNearEarthObjects(futureDate)
-        // console.log('incoming', data)
         setIncomingObjects({fields: data.fields, data: data.data})
       } catch (error) {
         handleNetworkErrors(error);
@@ -55,5 +53,6 @@ const IncomingObjects = ({ handleNetworkErrors, handleEvent }) => {
 export default IncomingObjects;
 
 IncomingObjects.propTypes = {
-  handleNetworkErrors: PropTypes.func.isRequired
+  handleNetworkErrors: PropTypes.func.isRequired,
+  handleEvent: PropTypes.func.isRequired
 }

@@ -1,19 +1,14 @@
 import './EventList.scss';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import EventDetails from '../EventDetails/EventDetails';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const EventList = ({data, handleEvent}) => {
   const navigate = useNavigate();
 
-
   const handleClick = () => {
-    // console.log(id)
-    console.log('my data goes in', data)
     handleEvent(data);
     navigate(`/stargazing-events/${data[2]}/${data[0]}`)
   }
-
 
   return (
    <div className='upcoming-container upcoming-container-selectable' onClick={(() => handleClick())}> 
@@ -28,3 +23,8 @@ const EventList = ({data, handleEvent}) => {
 }
 
 export default EventList;
+
+EventList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleEvent: PropTypes.func.isRequired
+}
