@@ -19,7 +19,7 @@ const ImageOfDay = ({handleNetworkErrors}) => {
   }, []);
 
   return (
-    <section className='image-of-day-container'>
+    <section className='general-container'>
       <h2 className='image-of-day-title'>{imageOfDay.title}</h2>
       <img src={imageOfDay.url} className="image-of-day" alt={imageOfDay.title} />
       <p className='image-of-day-description'>{imageOfDay.explanation}</p>

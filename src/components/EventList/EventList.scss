@@ -1,0 +1,17 @@
+
+.upcoming-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, min-content));
+  gap: .66em 1.2em;
+  grid-template-rows: auto auto;
+}
+
+.upcoming-item {
+  white-space: normal;
+}
+
+@media (max-width: 450px) {
+  .upcoming-container {
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+}
+}

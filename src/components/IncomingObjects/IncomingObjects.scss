@@ -16,6 +16,10 @@
 .display-info-btn:hover {
   color: var(--hover-tab-color);
   cursor: pointer;
+  
+  .icons {
+    filter: invert(97%) sepia(10%) saturate(2039%) hue-rotate(341deg) brightness(96%) contrast(92%);
+  }
 }
 
 .list-leader {
@@ -24,5 +28,13 @@
 
 .info-list {
   margin: 0 0 2em 2em;
-  
+  font-size: 1.1rem;
+  li {
+    margin-top: .3em;
+    line-height: 1.25;
+  }
+}
+
+.expanded-closed {
+  display: none;
 }
