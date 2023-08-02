@@ -11,7 +11,8 @@
   }
 
   .image-of-day-description {
-  
+    font-size: 1.1rem;
+    line-height: 1.25;
   }
 }
 
@@ -23,7 +24,7 @@
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 575px) {
   .image-of-day-container {
     padding: 1em;
     border-radius: 1rem;
