@@ -62,6 +62,10 @@ const IncomingObjects = ({ handleNetworkErrors }) => {
           <li><span className='list-leader'>Absolute Magnitude (h): </span><br/>The absolute magnitude of the object indicates its brightness. A lower value usually means a brighter object. Though it lacks a specific unit, it is measured on the absolute magnitude scale.</li>       
         </ol>
       </div>
+      <div className='upcoming-container'>
+        <p className='upcoming-item list-leader'>Date & Time</p>  
+        <p className='upcoming-item list-leader'>Designation</p>
+      </div>
       {objectEventList}
     </section>
   );

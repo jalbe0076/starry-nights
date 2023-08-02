@@ -1,9 +1,17 @@
 
-.upcoming-container {
+.upcoming-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, min-content));
   gap: .66em 1.2em;
   grid-template-rows: auto auto;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    width: fit-content;
+  }
 }
 
 .upcoming-item {
