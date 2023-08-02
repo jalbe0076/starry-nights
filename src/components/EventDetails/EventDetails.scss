@@ -1,0 +1,18 @@
+.description {
+  margin-bottom: 1em;
+  font-size: 1.3rem;
+  color: var(--active-tab-color);
+}
+
+.event-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, min-content));
+  gap: .66em 1.2em;
+  grid-template-rows: auto auto;
+  width: 320px;
+  
+  p {
+    margin-top: .3em;
+    line-height: 1.25; 
+  }
+}

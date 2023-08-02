@@ -1,16 +1,19 @@
 import './EventList.scss';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import EventDetails from '../EventDetails/EventDetails';
 
-const EventList = ({data, id}) => {
+const EventList = ({data, handleEvent}) => {
   const navigate = useNavigate();
-  // console.log('FIlds', fields)
-  // console.log('DATA', data)
+
 
   const handleClick = () => {
-    console.log(id)
+    // console.log(id)
+    console.log('my data goes in', data)
+    handleEvent(data);
     navigate(`/stargazing-events/${data[2]}/${data[0]}`)
   }
+
 
   return (
    <div className='upcoming-container upcoming-container-selectable' onClick={(() => handleClick())}> 

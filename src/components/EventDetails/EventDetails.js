@@ -1,9 +1,8 @@
 import './EventDetails.scss';
 import { useState } from 'react';
 
-const EventDetails = () => {
+const EventDetails = ({ eventDetails }) => {
   const [expandedInfo, setExpandedInfo] = useState(true);
-
   const handleExpandInfo = () => {
     setExpandedInfo(current => !current)
   }
@@ -28,6 +27,20 @@ const EventDetails = () => {
           <li><span className='list-leader'>Absolute Magnitude (h): </span><br/>The absolute magnitude of the object indicates its brightness. A lower value usually means a brighter object. Though it lacks a specific unit, it is measured on the absolute magnitude scale.</li>       
         </ol>
       </div>
+        <h3 className='description'>{eventDetails[0]}</h3>
+      <article className='event-details'>
+        <ol className='info-list'>
+            <ul><span className='list-leader'>Date of Event: </span><br/>{eventDetails[3]}</ul>
+            <ul><span className='list-leader'>Orbit ID:</span><br/>{eventDetails[1]}</ul>
+            <ul><span className='list-leader'>Distance from Earth: </span><br/>{eventDetails[4]} AU</ul>
+            <ul><span className='list-leader'>Minimum Distance: </span><br/>{eventDetails[5]} AU</ul>
+            <ul><span className='list-leader'>Maximum Distance: </span><br/>{eventDetails[6]} AU</ul>
+            <ul><span className='list-leader'>Relative Velocity: </span><br/>{eventDetails[7]} km/s</ul>
+            <ul><span className='list-leader'>Relative Velocity at Infinity: </span><br/>{eventDetails[8]} km/s</ul>
+            <ul><span className='list-leader'>Time Uncertainty: </span><br/>{eventDetails[9]}</ul>
+            <ul><span className='list-leader'>Absolute Magnitude: </span><br/>{eventDetails[10]}</ul>       
+          </ol>
+      </article>
     </section>
   )
 }

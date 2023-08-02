@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import EventList from '../EventList/EventList';
 import { nanoid } from 'nanoid';
 
-const IncomingObjects = ({ handleNetworkErrors }) => {
+const IncomingObjects = ({ handleNetworkErrors, handleEvent }) => {
   const [incomingObjects, setIncomingObjects] = useState([]);
   const [expandedInfo, setExpandedInfo] = useState(true);
   
@@ -14,7 +14,7 @@ const IncomingObjects = ({ handleNetworkErrors }) => {
       try {
         const futureDate = setFutureDate();
         const data = await getIncomingNearEarthObjects(futureDate)
-        console.log('incoming', data)
+        // console.log('incoming', data)
         setIncomingObjects({fields: data.fields, data: data.data})
       } catch (error) {
         handleNetworkErrors(error);
@@ -25,7 +25,7 @@ const IncomingObjects = ({ handleNetworkErrors }) => {
   const objectEventList = incomingObjects.data && incomingObjects.data.map((event, i) => {
     const id = nanoid();
     return (
-      <EventList data={event} key={id} id={id} />
+      <EventList handleEvent={handleEvent} data={event} key={id} id={id} />
     );
   });
 
