@@ -1,0 +1,32 @@
+:root {
+  --active-tab-color: rgb(229, 221, 173);
+  --hover-tab-color: rgb(236, 218, 119);
+  --primary-contrast-color: rgb(249, 249, 249);
+  --primary-dark-color: rgb(18, 18, 18);
+  --primary-dark-tranparent: 18, 18, 18;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--primary-contrast-color);
+  letter-spacing: 1px;
+}
+
+.app {
+  max-width: 1440px;
+  margin: auto auto;
+  padding: 0 2em
+}
+
+body {
+  background: url(../../../public/images/main-background.jpg) var(--primary-dark-color);
+  background-size: cover;
+}
+
+@media (max-width: 420px) {
+  .app {
+    padding: 0 0.8em
+  }
+}
