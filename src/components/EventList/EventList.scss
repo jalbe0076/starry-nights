@@ -5,14 +5,6 @@
   gap: .66em 1.2em;
   grid-template-rows: auto auto;
   width: 320px;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    width: fit-content;
-  }
-
 }
 
 .upcoming-container-selectable:hover {
@@ -20,10 +12,6 @@
   .hover-colour-join {
     color: var(--hover-tab-color);
   }
-}
-
-.upcoming-item {
-  white-space: normal;
 }
 
 @media (max-width: 450px) {
