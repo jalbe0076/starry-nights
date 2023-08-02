@@ -18,7 +18,6 @@
   }
   
   .nav-links {
-    // color: var(--primary-contrast-color);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -31,10 +30,6 @@
   .nav-tabs {
     display: flex;
     gap: 1em;
-  }
-
-  .user-icon {
-    filter: invert(99%) sepia(1%) saturate(7360%) hue-rotate(58deg) brightness(134%) contrast(95%);
   }
 }
 

@@ -25,6 +25,10 @@ body {
   background-size: cover;
 }
 
+.icons {
+  filter: invert(99%) sepia(1%) saturate(7360%) hue-rotate(58deg) brightness(134%) contrast(95%);
+}
+
 @media (max-width: 420px) {
   .app {
     padding: 0 0.8em

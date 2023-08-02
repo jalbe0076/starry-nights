@@ -10,7 +10,7 @@ const Nav = () => {
             <NavLink to='/stargazing-events' className='nav-links' >STARGAZING EVENTS</NavLink>
             <NavLink to='/saved-events' className='nav-links' >SAVED EVENTS</NavLink>
           </div>
-          <img src={process.env.PUBLIC_URL + '/images/user-icon.png'} className='user-icon' />
+          <img src={process.env.PUBLIC_URL + '/images/user-icon.png'} className='icons' />
         </section>
       </nav>
   );
