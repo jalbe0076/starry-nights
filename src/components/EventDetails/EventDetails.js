@@ -2,14 +2,15 @@ import './EventDetails.scss';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents }) => {
+const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents, deleteSavedEvent }) => {
   const [expandedInfo, setExpandedInfo] = useState(true);
   const [eventSaved, setEventSaved] = useState(false)
 
   useEffect(() => {
     const searchIfSaved = savedEvents.find(event => event[3] === eventDetails[3] && event[0] === eventDetails[0]);
     searchIfSaved && setEventSaved(true);
-    console.log(searchIfSaved)
+
+    // return (() => setEventSaved(false))
   }, [savedEvents])
   
   const handleExpandInfo = () => {
@@ -17,7 +18,8 @@ const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents }) => {
   }
 
   const handleSaveBtn = (eventDetails) => {
-    addToSavedEvents(eventDetails)
+    console.log(eventDetails)
+    !eventSaved ? addToSavedEvents(eventDetails) : deleteSavedEvent(eventDetails)
   }
 
   return (

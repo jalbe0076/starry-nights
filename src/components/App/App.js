@@ -25,6 +25,10 @@ function App() {
     !searchIfSaved && setSavedEvents(prevEvents => [...prevEvents, newEvent]);
   }
 
+  const deleteSavedEvent = (removeEvent) => {
+    setSavedEvents(prevEvents => prevEvents.filter(event => event[3] !== removeEvent[3] && event[0] !== removeEvent[0]));
+  }
+
   return (
     <div className="app">
       <Nav />
@@ -34,7 +38,7 @@ function App() {
             <Route path='/' element={<ImageOfDay handleNetworkErrors={handleNetworkErrors}/>} />
             <Route path='stargazing-events' element={<IncomingObjects handleEventList={handleEventList} handleNetworkErrors={handleNetworkErrors} />} />
             <Route path='saved-events' element={<SavedEvents handleEventList={handleEventList} savedEvents={savedEvents} />} />
-            <Route path='stargazing-events/:jd/:des' element={eventDetails && <EventDetails eventDetails={eventDetails} addToSavedEvents={addToSavedEvents} savedEvents={savedEvents} />} />
+            <Route path='stargazing-events/:jd/:des' element={eventDetails && <EventDetails eventDetails={eventDetails} addToSavedEvents={addToSavedEvents} deleteSavedEvent={deleteSavedEvent} savedEvents={savedEvents} />} />
             {/* <Route path='*' /> */}
           </Routes>
         </main>
