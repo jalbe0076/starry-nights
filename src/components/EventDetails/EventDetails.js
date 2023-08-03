@@ -9,8 +9,6 @@ const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents, deleteSaved
   useEffect(() => {
     const searchIfSaved = savedEvents.find(event => event[3] === eventDetails[3] && event[0] === eventDetails[0]);
     searchIfSaved && setEventSaved(true);
-
-    // return (() => setEventSaved(false))
   }, [savedEvents])
   
   const handleExpandInfo = () => {
@@ -18,8 +16,8 @@ const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents, deleteSaved
   }
 
   const handleSaveBtn = (eventDetails) => {
-    console.log(eventDetails)
     !eventSaved ? addToSavedEvents(eventDetails) : deleteSavedEvent(eventDetails)
+    setEventSaved(current => !current)
   }
 
   return (
