@@ -23,6 +23,9 @@
   }
 }
 
+.event-details {
+  line-height: 2em;
+}
 
 .info-details {
   display: flex;
@@ -47,5 +50,11 @@
     .list-leader {
       flex-basis: 0;
     }
+  }
+
+  .event-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
   }
 }

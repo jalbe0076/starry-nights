@@ -2,11 +2,11 @@ import './EventList.scss';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const EventList = ({data, handleEvent}) => {
+const EventList = ({data, handleEventList}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    handleEvent(data);
+    handleEventList(data);
     navigate(`/stargazing-events/${data[2]}/${data[0]}`)
   }
 
@@ -26,5 +26,5 @@ export default EventList;
 
 EventList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.string).isRequired,
-  handleEvent: PropTypes.func.isRequired
+  handleEventList: PropTypes.func.isRequired
 }

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import EventList from '../EventList/EventList';
 import { nanoid } from 'nanoid';
 
-const IncomingObjects = ({ handleNetworkErrors, handleEvent }) => {
+const IncomingObjects = ({ handleNetworkErrors, handleEventList }) => {
   const [incomingObjects, setIncomingObjects] = useState([]);
   
   useEffect(() => {
@@ -23,7 +23,7 @@ const IncomingObjects = ({ handleNetworkErrors, handleEvent }) => {
   const objectEventList = incomingObjects.data && incomingObjects.data.map((event) => {
     const id = nanoid();
     return (
-      <EventList handleEvent={handleEvent} data={event} key={id} id={id} />
+      <EventList handleEventList={handleEventList} data={event} key={id} id={id} />
     );
   });
 
@@ -52,5 +52,5 @@ export default IncomingObjects;
 
 IncomingObjects.propTypes = {
   handleNetworkErrors: PropTypes.func.isRequired,
-  handleEvent: PropTypes.func.isRequired
+  handleEventList: PropTypes.func.isRequired
 }

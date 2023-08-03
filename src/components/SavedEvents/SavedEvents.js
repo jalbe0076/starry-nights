@@ -1,7 +1,18 @@
+import EventList from '../EventList/EventList';
 import './SavedEvents.scss';
 import PropTypes from 'prop-types'
+import { nanoid } from 'nanoid'
 
-const SavedEvents = ({ savedEvents }) => {
+const SavedEvents = ({ savedEvents, handleEventList }) => {
+
+  console.log(savedEvents)
+
+  const savedEventList = savedEvents.map((event) => {
+    const id = nanoid();
+    return (
+      <EventList handleEventList={handleEventList} data={event} key={id} id={id} />
+    );
+  });
 
   return (
     <section className='general-container'>
@@ -11,7 +22,7 @@ const SavedEvents = ({ savedEvents }) => {
         <p className='upcoming-item list-leader'>Date & Time</p>  
         <p className='upcoming-item list-leader'>Designation</p>
       </div>
-      {savedEvents}
+      {savedEventList}
     </section>
   )
 };
@@ -19,5 +30,6 @@ const SavedEvents = ({ savedEvents }) => {
 export default SavedEvents;
 
 SavedEvents.propTypes = {
-  savedEvents: PropTypes.arrayOf(PropTypes.string).isRequired
+  savedEvents: PropTypes.arrayOf(PropTypes.array).isRequired,
+  handleEventList: PropTypes.func.isRequired
 }

@@ -16,12 +16,12 @@ function App() {
     setNetworkError(error.message)
   }
 
-  const handleEvent = (data) => {
+  const handleEventList = (data) => {
       setEventDetails(data);
   }
 
   const addToSavedEvents = (newEvent) => {
-    setSavedEvents(newEvent)
+    setSavedEvents(prevEvents => [...prevEvents, newEvent])
   }
 
   return (
@@ -31,8 +31,8 @@ function App() {
         <main>
           <Routes>
             <Route path='/' element={<ImageOfDay handleNetworkErrors={handleNetworkErrors}/>} />
-            <Route path='stargazing-events' element={<IncomingObjects handleEvent={handleEvent} handleNetworkErrors={handleNetworkErrors} />} />
-            <Route path='saved-events' element={<SavedEvents handleNetworkErrors={handleNetworkErrors} savedEvents={savedEvents} />} />
+            <Route path='stargazing-events' element={<IncomingObjects handleEventList={handleEventList} handleNetworkErrors={handleNetworkErrors} />} />
+            <Route path='saved-events' element={<SavedEvents handleEventList={handleEventList} savedEvents={savedEvents} />} />
             <Route path='stargazing-events/:jd/:des' element={eventDetails && <EventDetails eventDetails={eventDetails} addToSavedEvents={addToSavedEvents} />} />
             {/* <Route path='*' /> */}
           </Routes>

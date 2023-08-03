@@ -10,7 +10,7 @@ const EventDetails = ({ eventDetails, addToSavedEvents }) => {
   }
 
   const handleSaveBtn = (eventDetails) => {
-
+    addToSavedEvents(eventDetails)
   }
 
   return (
