@@ -1,0 +1,50 @@
+.events-subtitle {
+  font-size: 1.6rem;
+}
+
+.display-info-btn {
+  background: none;
+  border: none;
+  margin: .5em 0;
+  padding: .4em .8em;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.display-info-btn:hover {
+  color: var(--hover-tab-color);
+  cursor: pointer;
+  
+  .icons {
+    filter: invert(97%) sepia(10%) saturate(2039%) hue-rotate(341deg) brightness(96%) contrast(92%);
+  }
+}
+
+.list-leader {
+  font-weight: 800;
+}
+
+.info-list {
+  margin: 0 0 2em 2em;
+  font-size: 1.1rem;
+  li {
+    margin-top: .3em;
+    line-height: 1.25;
+  }
+}
+
+.expanded-closed {
+  display: none;
+}
+
+.list-action {
+  margin: 1em 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.list-explanation {
+  margin-bottom: 1.3em;
+}

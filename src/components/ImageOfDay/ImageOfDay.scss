@@ -1,4 +1,4 @@
-.image-of-day-container {
+.general-container {
   max-width: 960px;
   padding: 2em 3em 2em;
   background: rgba(var(--primary-dark-tranparent), .8);
@@ -17,7 +17,7 @@
 }
 
 @media (max-width: 750px) {
-  .image-of-day-container {
+  .general-container {
      .image-of-day {
       margin: 1em auto;
     }
@@ -25,14 +25,14 @@
 }
 
 @media (max-width: 575px) {
-  .image-of-day-container {
+  .general-container {
     padding: 1em;
     border-radius: 1rem;
   }
 }
 
 @media (max-height: 640px) and (orientation: landscape) {
-  .image-of-day-container {
+  .general-container {
     .image-of-day {
       height: 100vh;
       width: auto;

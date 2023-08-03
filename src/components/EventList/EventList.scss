@@ -1,0 +1,22 @@
+
+.upcoming-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, min-content));
+  gap: .66em 1.2em;
+  grid-template-rows: auto auto;
+  width: 320px;
+}
+
+.upcoming-container-selectable:hover {
+  cursor: pointer;
+  .hover-colour-join {
+    color: var(--hover-tab-color);
+  }
+}
+
+@media (max-width: 450px) {
+  .upcoming-container {
+    grid-template-columns: repeat(auto-fit, minmax(90px, min-content));
+    width: 210px;
+  }
+}
