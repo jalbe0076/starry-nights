@@ -1,8 +1,28 @@
 .description {
-  margin-bottom: 1em;
   font-size: 1.3rem;
   color: var(--active-tab-color);
 }
+
+.event-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  gap: 2em;
+
+  .save-event-btn {
+    background: none;
+    padding: .5em 1.25em;
+    border: var(--active-tab-color) 2px solid;
+    border-radius: .7rem;
+    color: var(--primary-contrast-color);
+  }
+
+  .save-event-btn:hover {
+    cursor: pointer;
+    color: var(--hover-tab-color);
+  }
+}
+
 
 .info-details {
   display: flex;

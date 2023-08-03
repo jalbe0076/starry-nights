@@ -2,10 +2,15 @@ import './EventDetails.scss';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const EventDetails = ({ eventDetails }) => {
+const EventDetails = ({ eventDetails, addToSavedEvents }) => {
   const [expandedInfo, setExpandedInfo] = useState(true);
+  
   const handleExpandInfo = () => {
     setExpandedInfo(current => !current)
+  }
+
+  const handleSaveBtn = (eventDetails) => {
+
   }
 
   return (
@@ -28,7 +33,10 @@ const EventDetails = ({ eventDetails }) => {
           <li><span className='list-leader'>Absolute Magnitude (h): </span><br/>The absolute magnitude of the object indicates its brightness. A lower value usually means a brighter object. Though it lacks a specific unit, it is measured on the absolute magnitude scale.</li>       
         </ol>
       </div>
-        <h3 className='description'>Designation: {eventDetails[0]}</h3>
+        <div className='event-header'>
+          <h3 className='description'>Designation: {eventDetails[0]}</h3>
+          <button className='save-event-btn' onClick={() => handleSaveBtn(eventDetails)}>SAVE EVENT</button>
+        </div>
       <article className='event-details'>
         <ol className='info-list'>
             <ul className='info-details'><span className='list-leader'>Date of Event: </span><p></p>{eventDetails[3]}</ul>
@@ -49,5 +57,6 @@ const EventDetails = ({ eventDetails }) => {
 export default EventDetails;
 
 EventDetails.propTypes = {
-  eventDetails: PropTypes.arrayOf(PropTypes.string).isRequired
+  eventDetails: PropTypes.arrayOf(PropTypes.string).isRequired,
+  addToSavedEvents: PropTypes.func.isRequired
 }
