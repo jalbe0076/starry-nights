@@ -28,7 +28,7 @@ const EventDetails = ({ eventDetails }) => {
           <li><span className='list-leader'>Absolute Magnitude (h): </span><br/>The absolute magnitude of the object indicates its brightness. A lower value usually means a brighter object. Though it lacks a specific unit, it is measured on the absolute magnitude scale.</li>       
         </ol>
       </div>
-        <h3 className='description'>{eventDetails[0]}</h3>
+        <h3 className='description'>Designation: {eventDetails[0]}</h3>
       <article className='event-details'>
         <ol className='info-list'>
             <ul className='info-details'><span className='list-leader'>Date of Event: </span><p></p>{eventDetails[3]}</ul>

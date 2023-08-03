@@ -20,7 +20,7 @@ const IncomingObjects = ({ handleNetworkErrors, handleEvent }) => {
     })();
   }, []);
 
-  const objectEventList = incomingObjects.data && incomingObjects.data.map((event, i) => {
+  const objectEventList = incomingObjects.data && incomingObjects.data.map((event) => {
     const id = nanoid();
     return (
       <EventList handleEvent={handleEvent} data={event} key={id} id={id} />
