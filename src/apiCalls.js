@@ -1,5 +1,5 @@
 export const getPictureOfDay = async () => {
-  const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=gFoquFW2xoAF6Om7oJdOgYjD60ZCAPujTdna3lzY');
+  const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}`);
   const data = await handleError(response);
   return data;
 }
