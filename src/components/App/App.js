@@ -21,7 +21,8 @@ function App() {
   }
 
   const addToSavedEvents = (newEvent) => {
-    setSavedEvents(prevEvents => [...prevEvents, newEvent])
+    const searchIfSaved = savedEvents.find(event => event[3] === newEvent[3] && event[0] === newEvent[0]);
+    !searchIfSaved && setSavedEvents(prevEvents => [...prevEvents, newEvent]);
   }
 
   return (

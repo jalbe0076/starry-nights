@@ -5,8 +5,6 @@ import { nanoid } from 'nanoid'
 
 const SavedEvents = ({ savedEvents, handleEventList }) => {
 
-  console.log(savedEvents)
-
   const savedEventList = savedEvents.map((event) => {
     const id = nanoid();
     return (
