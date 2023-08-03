@@ -3,24 +3,30 @@ import { getIncomingNearEarthObjects } from '../../apiCalls';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import EventList from '../EventList/EventList';
+import { nanoid } from 'nanoid';
 
-const IncomingObjects = ({ handleNetworkErrors }) => {
+const IncomingObjects = ({ handleNetworkErrors, handleEvent }) => {
   const [incomingObjects, setIncomingObjects] = useState([]);
   
   useEffect(() => {
     (async() => {
       try {
         const futureDate = setFutureDate();
-        const data = await await getIncomingNearEarthObjects(futureDate)
-        console.log('incoming', data)
-        setIncomingObjects(data.data)
+        const data = await getIncomingNearEarthObjects(futureDate)
+        setIncomingObjects({fields: data.fields, data: data.data})
       } catch (error) {
-        handleNetworkErrors(error)
+        handleNetworkErrors(error);
       }
     })();
   }, []);
 
-  
+  const objectEventList = incomingObjects.data && incomingObjects.data.map((event, i) => {
+    const id = nanoid();
+    return (
+      <EventList handleEvent={handleEvent} data={event} key={id} id={id} />
+    );
+  });
+
 
   const setFutureDate = () => {
     const date = new Date()
@@ -29,13 +35,24 @@ const IncomingObjects = ({ handleNetworkErrors }) => {
   }
 
   return(
-    <>
-    </>
+    <section className='general-container'>
+      <h2 className='events-subtitle'>Celestial Appointments</h2>
+      <p className='list-action'>Mark your cosmic calendar!</p>
+      <p className='list-explanation' >Get ready for upcoming celestial close approaches, click on any event to get more information. </p>
+    
+      
+      <div className='upcoming-container'>
+        <p className='upcoming-item list-leader'>Date & Time</p>  
+        <p className='upcoming-item list-leader'>Designation</p>
+      </div>
+        {objectEventList}
+    </section>
   );
 };
 
 export default IncomingObjects;
 
 IncomingObjects.propTypes = {
-  handleNetworkErrors: PropTypes.func.isRequired
+  handleNetworkErrors: PropTypes.func.isRequired,
+  handleEvent: PropTypes.func.isRequired
 }
