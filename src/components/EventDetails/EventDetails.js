@@ -1,9 +1,16 @@
 import './EventDetails.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const EventDetails = ({ eventDetails, addToSavedEvents }) => {
+const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents }) => {
   const [expandedInfo, setExpandedInfo] = useState(true);
+  const [eventSaved, setEventSaved] = useState(false)
+
+  useEffect(() => {
+    const searchIfSaved = savedEvents.find(event => event[3] === eventDetails[3] && event[0] === eventDetails[0]);
+    searchIfSaved && setEventSaved(true);
+    console.log(searchIfSaved)
+  }, [savedEvents])
   
   const handleExpandInfo = () => {
     setExpandedInfo(current => !current)
@@ -35,7 +42,7 @@ const EventDetails = ({ eventDetails, addToSavedEvents }) => {
       </div>
         <div className='event-header'>
           <h3 className='description'>Designation: {eventDetails[0]}</h3>
-          <button className='save-event-btn' onClick={() => handleSaveBtn(eventDetails)}>SAVE EVENT</button>
+          <button className='save-event-btn' onClick={() => handleSaveBtn(eventDetails)}>{eventSaved ? <>DELETE EVENT</> : <>SAVE EVENT</>}</button>
         </div>
       <article className='event-details'>
         <ol className='info-list'>
@@ -58,5 +65,6 @@ export default EventDetails;
 
 EventDetails.propTypes = {
   eventDetails: PropTypes.arrayOf(PropTypes.string).isRequired,
-  addToSavedEvents: PropTypes.func.isRequired
+  addToSavedEvents: PropTypes.func.isRequired,
+  savedEvents: PropTypes.arrayOf(PropTypes.array).isRequired
 }
