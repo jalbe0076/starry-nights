@@ -38,7 +38,7 @@
 @media (max-width: 825px) {
   .banner-container {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 6fr 1fr;
     grid-template-rows: auto auto; 
   }
   
@@ -71,14 +71,12 @@
 
 @media (max-width: 450px) {
   .banner-container {
-    margin-bottom: 1em;
-  
     .icons {
-      width: 30px;
+      width: 28px;
     }
 
     .title {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
 
     .nav-tabs {

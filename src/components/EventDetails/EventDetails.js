@@ -46,7 +46,7 @@ const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents, deleteSaved
         </div>
       <article className='event-details'>
         <ol className='info-list'>
-            <ul className='info-details'><span className='list-leader'>Date of Event: </span><p></p>{eventDetails[3]}</ul>
+            <ul className='info-details'><span className='list-leader'>Date of Event: </span>{eventDetails[3]}</ul>
             <ul className='info-details'><span className='list-leader'>Orbit ID: </span>{eventDetails[1]}</ul>
             <ul className='info-details'><span className='list-leader'>Distance from Earth: </span>{eventDetails[4]} AU</ul>
             <ul className='info-details'><span className='list-leader'>Minimum Distance: </span>{eventDetails[5]} AU</ul>

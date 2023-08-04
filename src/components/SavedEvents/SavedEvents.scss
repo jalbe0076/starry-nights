@@ -28,7 +28,7 @@
 }
 
 .list-leader {
-  margin-bottom: .7em;
+  margin-bottom: 1em;
 }
 
 @media (max-width: 460px) {
@@ -44,5 +44,11 @@
     .saved-event-style{
       font-weight: 800;
     }
+  }
+}
+
+@media (max-width: 330px) {
+  .saved-upcoming {
+    margin-left: 0;
   }
 }
