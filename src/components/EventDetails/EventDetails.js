@@ -1,11 +1,23 @@
 import './EventDetails.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const EventDetails = ({ eventDetails }) => {
+const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents, deleteSavedEvent }) => {
   const [expandedInfo, setExpandedInfo] = useState(true);
+  const [eventSaved, setEventSaved] = useState(false)
+
+  useEffect(() => {
+    const searchIfSaved = savedEvents.find(event => event[3] === eventDetails[3] && event[0] === eventDetails[0]);
+    searchIfSaved && setEventSaved(true);
+  }, [savedEvents])
+  
   const handleExpandInfo = () => {
     setExpandedInfo(current => !current)
+  }
+
+  const handleSaveBtn = (eventDetails) => {
+    !eventSaved ? addToSavedEvents(eventDetails) : deleteSavedEvent(eventDetails)
+    setEventSaved(current => !current)
   }
 
   return (
@@ -28,10 +40,13 @@ const EventDetails = ({ eventDetails }) => {
           <li><span className='list-leader'>Absolute Magnitude (h): </span><br/>The absolute magnitude of the object indicates its brightness. A lower value usually means a brighter object. Though it lacks a specific unit, it is measured on the absolute magnitude scale.</li>       
         </ol>
       </div>
-        <h3 className='description'>{eventDetails[0]}</h3>
+        <div className='event-header'>
+          <h3 className='description'>Designation: {eventDetails[0]}</h3>
+          <button className='save-event-btn' onClick={() => handleSaveBtn(eventDetails)}>{eventSaved ? <>DELETE EVENT</> : <>SAVE EVENT</>}</button>
+        </div>
       <article className='event-details'>
         <ol className='info-list'>
-            <ul className='info-details'><span className='list-leader'>Date of Event: </span><p></p>{eventDetails[3]}</ul>
+            <ul className='info-details'><span className='list-leader'>Date of Event: </span>{eventDetails[3]}</ul>
             <ul className='info-details'><span className='list-leader'>Orbit ID: </span>{eventDetails[1]}</ul>
             <ul className='info-details'><span className='list-leader'>Distance from Earth: </span>{eventDetails[4]} AU</ul>
             <ul className='info-details'><span className='list-leader'>Minimum Distance: </span>{eventDetails[5]} AU</ul>
@@ -49,5 +64,7 @@ const EventDetails = ({ eventDetails }) => {
 export default EventDetails;
 
 EventDetails.propTypes = {
-  eventDetails: PropTypes.arrayOf(PropTypes.string).isRequired
+  eventDetails: PropTypes.arrayOf(PropTypes.string).isRequired,
+  addToSavedEvents: PropTypes.func.isRequired,
+  savedEvents: PropTypes.arrayOf(PropTypes.array).isRequired
 }
