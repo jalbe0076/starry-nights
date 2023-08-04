@@ -13,7 +13,6 @@ const IncomingObjects = ({ handleNetworkErrors, handleEventList }) => {
       try {
         const futureDate = setFutureDate();
         const data = await getIncomingNearEarthObjects(futureDate)
-        console.log(JSON.stringify(data.data))
         setIncomingObjects({fields: data.fields, data: data.data})
       } catch (error) {
         handleNetworkErrors(error);
