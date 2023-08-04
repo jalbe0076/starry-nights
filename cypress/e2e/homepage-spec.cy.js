@@ -1,4 +1,4 @@
-describe('As a user I should be presented with a picture of the day, it\s title and a description', () => {
+describe('As a user I should be presented with a picture of the day, it\s title and a description, I should also be presented with messages on network or navigation issues', () => {
   beforeEach(() => {
     cy.intercept('GET', `https://api.nasa.gov/planetary/apod?api_key=${Cypress.env('REACT_APP_API_KEY')}`, {
       statusCode: 200,
@@ -43,5 +43,13 @@ describe('As a user I should be presented with a picture of the day, it\s title 
     })
     cy.visit('http://localhost:3000/')
      .get('h2').contains('HTTP Error: 404 Not Found')
+  })
+
+  it('Should be presented with an image if the path does not exist', () => {
+    cy.wait('@picture').then(() => {
+    cy.visit('http://localhost:3000/random-fake-path')
+     .get('h2').contains('LOST IN SPACE, GO BACK!')
+     .get('.bad-image').should('have.attr', 'alt', '9 different galaxies visible before you')
+    })
   })
 });
