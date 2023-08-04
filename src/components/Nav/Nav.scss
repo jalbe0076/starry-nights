@@ -1,10 +1,13 @@
+#stick {
+  position: sticky;
+  top: 0;
+}
+
 .banner-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 0;
-  position: sticky;
-  top: 0;
 
   .title {
     font-size: 2rem;
