@@ -40,7 +40,7 @@ function App() {
             <Route path='stargazing-events' element={<IncomingObjects handleEventList={handleEventList} handleNetworkErrors={handleNetworkErrors} />} />
             <Route path='saved-events' element={<SavedEvents handleEventList={handleEventList} savedEvents={savedEvents} deleteSavedEvent={deleteSavedEvent} />} />
             <Route path='stargazing-events/:jd/:des' element={eventDetails && <EventDetails eventDetails={eventDetails} addToSavedEvents={addToSavedEvents} deleteSavedEvent={deleteSavedEvent} savedEvents={savedEvents} />} />
-            {/* <Route path='*' /> */}
+            <Route path='*' element={<BadPath />} />
           </Routes>
         </main>
         : <h2>{networkError}</h2>
