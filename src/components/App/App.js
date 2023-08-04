@@ -7,6 +7,7 @@ import EventDetails from '../EventDetails/EventDetails';
 import BadPath from '../Bad-path/BadPath';
 import ImageOfDay from '../ImageOfDay/ImageOfDay';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 function App() { 
   const [networkError, setNetworkError] = useState(false);
@@ -48,6 +49,11 @@ function App() {
             <Route path='stargazing-events/:jd/:des' element={eventDetails && <EventDetails eventDetails={eventDetails} addToSavedEvents={addToSavedEvents} deleteSavedEvent={deleteSavedEvent} savedEvents={savedEvents} />} />
             <Route path='*' element={<BadPath />} />
           </Routes>
+          <ToastContainer 
+            position="bottom-center"
+            autoClose={3000}
+            theme="dark" 
+          />
         </main>
         : <h2>{networkError}</h2>
       }

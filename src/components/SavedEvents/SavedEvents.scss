@@ -8,7 +8,7 @@
   border: none;
   margin-right: 1em;
 
-  .delete-icon:hover {
+  .delete-icon:hover, .delete-icon:focus {
     cursor: pointer;
     filter: invert(97%) sepia(10%) saturate(2039%) hue-rotate(341deg) brightness(96%) contrast(92%);
   }

@@ -11,14 +11,14 @@ const EventList = ({data, handleEventList}) => {
   }
 
   return (
-   <div className='upcoming-container upcoming-container-selectable' onClick={(() => handleClick())}> 
+   <button  className='upcoming-container upcoming-container-selectable' onClick={(() => handleClick())}> 
       <p className='upcoming-item'>
         <span className='hover-colour-join saved-event-style' >{data[3].split(' ')[0]}</span>
         <br />
         <span className='hover-colour-join saved-event-style'>{data[3].split(' ')[1]}</span>
       </p>
       <p className='upcoming-item hover-colour-join'>{data[0]}</p>
-  </div>
+  </button>
   )
 }
 

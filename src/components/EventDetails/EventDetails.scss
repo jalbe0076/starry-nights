@@ -17,7 +17,8 @@
     color: var(--primary-contrast-color);
   }
 
-  .save-event-btn:hover {
+
+  .save-event-btn:hover, .save-event-btn:focus {
     cursor: pointer;
     color: var(--hover-tab-color);
   }
@@ -37,6 +38,10 @@
 .info-details .list-leader {
   flex-basis: 230px;
   flex-shrink: 0;
+}
+
+.Toastify__progress-bar-theme--dark {
+  background-color: var(--hover-tab-color);
 }
 
 @media (max-width: 680px) {
