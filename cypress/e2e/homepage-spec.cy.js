@@ -18,4 +18,28 @@ describe('As a user I should be presented with a picture of the day, it\s title 
       .get('.image-of-day-description').contains('p', 'Why is the Cigar Galaxy billowing red smoke?')
     })
   });
+
+  it('Should not display a picture if there is a 500 level network error', () => {
+    cy.intercept('GET', `https://api.nasa.gov/planetary/apod?api_key=${Cypress.env('REACT_APP_API_KEY')}`, {
+      statusCode: 500
+    })
+    cy.visit('http://localhost:3000/')
+    .get('h2').contains('HTTP Error: 500 Internal Server Error')
+  })
+
+  it('Should not display a picture if there is a 504 level network error', () => {
+    cy.intercept('GET', `https://api.nasa.gov/planetary/apod?api_key=${Cypress.env('REACT_APP_API_KEY')}`, {
+      statusCode: 504
+    })
+    cy.visit('http://localhost:3000/')
+    .get('h2').contains('HTTP Error: 504 Gateway Timeout')
+  })
+
+  it('Should not display a picture if there is a 404 level network error', () => {
+    cy.intercept('GET', `https://api.nasa.gov/planetary/apod?api_key=${Cypress.env('REACT_APP_API_KEY')}`, {
+      statusCode: 404
+    })
+    cy.visit('http://localhost:3000/')
+     .get('h2').contains('HTTP Error: 404 Not Found')
+  })
 });
