@@ -14,7 +14,7 @@ describe('I should be able to navigate to a page containing upcoming events', ()
       fixture: 'upcoming-events.json'
     }).as('upcoming-events')
 
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/starry-nights')
   });
 
   it('Should see a list of upcoming events', () => {
