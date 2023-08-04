@@ -14,7 +14,7 @@
     text-decoration: none;
   }
 
-  .title:hover {
+  .title:hover, .title:focus {
     color: var(--hover-tab-color);
   }
   
@@ -29,7 +29,7 @@
     color: var(--hover-tab-color);
   }
 
-  .nav-links:hover {
+  .nav-links:hover, .nav-links:focus {
     color: var(--hover-tab-color);
   }
 
