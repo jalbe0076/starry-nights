@@ -1,11 +1,15 @@
 describe('I should be able to navigate to a page containing upcoming events', () => {
   beforeEach(() => {
+    const date = new Date()
+    date.setDate(date.getDate() + 60)
+    const futureDate = date.toLocaleDateString('en-CA');
+    
     cy.intercept('GET', `https://api.nasa.gov/planetary/apod?api_key=${Cypress.env('REACT_APP_API_KEY')}`, {
       statusCode: 200,
       fixture: 'picture-of-day.json'
     })
     
-    cy.intercept('GET', 'https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-max=2023-10-02', {
+    cy.intercept('GET', `https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-max=${futureDate}`, {
       statusCode: 200,
       fixture: 'upcoming-events.json'
     }).as('upcoming-events')
@@ -15,7 +19,7 @@ describe('I should be able to navigate to a page containing upcoming events', ()
 
   it('Should see a list of upcoming events', () => {
     cy.get('.nav-links').first().should('have.css', 'color', 'rgb(249, 249, 249)').click()
-      .wait('@upcoming-events').then(() => {
+      cy.wait('@upcoming-events').then(() => {
         cy.get('.nav-links').first().should('have.css', 'color', 'rgb(229, 221, 173)')
           .get('.general-container').should('be.visible').contains('h2', 'Upcoming Celestial Events')
           .next().contains('p', 'Mark your cosmic calendar!')
