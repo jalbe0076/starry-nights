@@ -39,8 +39,8 @@ describe('I should be able to save upcoming events delete them', () => {
 
   it('Should be able to click on a button to save and delete events and be notified if there are no saved events when on the page to view events, should be able to delete from the saved events pages and also be able to click on an event to view more details from the saved events page.', () => {
     cy.wait('@upcoming-events').then(() => {
-      cy.get('[href="/saved-events"]').should('have.css', 'color', 'rgb(249, 249, 249)').click()
-        .get('[href="/saved-events"]').should('have.css', 'color', 'rgb(229, 221, 173)')
+      cy.get('[href="/saved-events"]').should('have.css', 'color', 'rgb(229, 221, 173)').click()
+        .get('[href="/saved-events"]').should('have.css', 'color', 'rgb(236, 218, 119)')
         .get('.list-leader').contains('No saved celestial events')
         .get('[href="/stargazing-events"]').click()
         .get('.upcoming-container-selectable').first().click()

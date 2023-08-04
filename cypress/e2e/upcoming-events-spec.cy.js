@@ -18,9 +18,9 @@ describe('I should be able to navigate to a page containing upcoming events', ()
   });
 
   it('Should see a list of upcoming events', () => {
-    cy.get('.nav-links').first().should('have.css', 'color', 'rgb(249, 249, 249)').click()
+    cy.get('.nav-links').first().should('have.css', 'color', 'rgb(229, 221, 173)').click()
       cy.wait('@upcoming-events').then(() => {
-        cy.get('.nav-links').first().should('have.css', 'color', 'rgb(229, 221, 173)')
+        cy.get('.nav-links').first().should('have.css', 'color', 'rgb(236, 218, 119)')
           .get('.general-container').should('be.visible').contains('h2', 'Upcoming Celestial Events')
           .next().contains('p', 'Mark your cosmic calendar!')
           .next().contains('p', 'Get ready for upcoming celestial')
