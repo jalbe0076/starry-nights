@@ -5,7 +5,7 @@ export const getPictureOfDay = async () => {
 }
 
 export const getIncomingNearEarthObjects = async (futureDate) => {
-  const response = await fetch(`https://thingproxy.freeboard.io/fetch/https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-max=${futureDate}`);
+  const response = await fetch(`https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-max=${futureDate}`);
   const data = await handleError(response);
   return data;
 }
