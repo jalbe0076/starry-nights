@@ -44,10 +44,10 @@ function App() {
           {loading && <div className='loading-container'><span className='loading'></span></div>}
           <Routes>
             <Route path='/' element={<ImageOfDay handleNetworkErrors={handleNetworkErrors} handleLoading={handleLoading} loading={loading} />} />
-            <Route path='stargazing-events' element={<IncomingObjects handleEventList={handleEventList} handleNetworkErrors={handleNetworkErrors} handleLoading={handleLoading} />} />
-            <Route path='saved-events' element={<SavedEvents handleEventList={handleEventList} savedEvents={savedEvents} deleteSavedEvent={deleteSavedEvent} />} />
-            <Route path='stargazing-events/:jd/:des' element={eventDetails && <EventDetails eventDetails={eventDetails} addToSavedEvents={addToSavedEvents} deleteSavedEvent={deleteSavedEvent} savedEvents={savedEvents} />} />
-            <Route path='*' element={<BadPath />} />
+            <Route path='/stargazing-events' element={<IncomingObjects handleEventList={handleEventList} handleNetworkErrors={handleNetworkErrors} handleLoading={handleLoading} />} />
+            <Route path='/saved-events' element={<SavedEvents handleEventList={handleEventList} savedEvents={savedEvents} deleteSavedEvent={deleteSavedEvent} />} />
+            <Route path='/stargazing-events/:jd/:des' element={eventDetails && <EventDetails eventDetails={eventDetails} addToSavedEvents={addToSavedEvents} deleteSavedEvent={deleteSavedEvent} savedEvents={savedEvents} />} />
+            <Route path='/*' element={<BadPath />} />
           </Routes>
           <ToastContainer 
             position="bottom-center"

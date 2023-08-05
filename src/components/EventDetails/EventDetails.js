@@ -78,5 +78,6 @@ export default EventDetails;
 EventDetails.propTypes = {
   eventDetails: PropTypes.arrayOf(PropTypes.string).isRequired,
   addToSavedEvents: PropTypes.func.isRequired,
-  savedEvents: PropTypes.arrayOf(PropTypes.array).isRequired
+  savedEvents: PropTypes.arrayOf(PropTypes.array).isRequired,
+  deleteSavedEvent: PropTypes.func.isRequired
 }
