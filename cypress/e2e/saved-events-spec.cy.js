@@ -4,7 +4,7 @@ describe('I should be able to save upcoming events delete them', () => {
     date.setDate(date.getDate() + 60)
     const futureDate = date.toLocaleDateString('en-CA');
  
-    cy.intercept('GET', `https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-max=${futureDate}`, {
+    cy.intercept('GET', `https://api.allorigins.win/raw?url=https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-max=${futureDate}`, {
       statusCode: 200,
       fixture: 'upcoming-events.json'
     }).as('upcoming-events')

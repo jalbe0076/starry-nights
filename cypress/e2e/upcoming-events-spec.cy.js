@@ -9,7 +9,7 @@ describe('I should be able to navigate to a page containing upcoming events', ()
       fixture: 'picture-of-day.json'
     })
     
-    cy.intercept('GET', `https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-max=${futureDate}`, {
+    cy.intercept('GET', `https://api.allorigins.win/raw?url=https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-max=${futureDate}`, {
       statusCode: 200,
       fixture: 'upcoming-events.json'
     }).as('upcoming-events')
