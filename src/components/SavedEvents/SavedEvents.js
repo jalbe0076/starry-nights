@@ -1,12 +1,17 @@
+import 'react-toastify/dist/ReactToastify.css';
 import EventList from '../EventList/EventList';
 import './SavedEvents.scss';
-import PropTypes from 'prop-types'
-import { nanoid } from 'nanoid'
+import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid';
+import { toast } from 'react-toastify';
 
 const SavedEvents = ({ savedEvents, handleEventList, deleteSavedEvent }) => {
 
+  const notifyDelete = () => toast('Event Deleted!')
+
   const handleClick = (event) => {
-    deleteSavedEvent(event)
+    deleteSavedEvent(event);
+    notifyDelete();
   };
 
   const savedEventList = savedEvents.map((event) => {

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Nav = () => {
   return (
       <nav >
-        <section className='banner-container'>
+        <section className='banner-container' id='stick'>
           <NavLink to='/' className='title'><h1>STARRY NIGHTS</h1></NavLink> 
           <div className='nav-tabs'>
             <NavLink to='/stargazing-events' className='nav-links'>STARGAZING EVENTS</NavLink>

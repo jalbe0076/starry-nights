@@ -1,6 +1,8 @@
+import 'react-toastify/dist/ReactToastify.css';
 import './EventDetails.scss';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 
 const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents, deleteSavedEvent }) => {
   const [expandedInfo, setExpandedInfo] = useState(true);
@@ -11,12 +13,21 @@ const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents, deleteSaved
     searchIfSaved && setEventSaved(true);
   }, [savedEvents])
   
+  const notifySaved = () => toast('Event Saved!')
+  const notifyDelete = () => toast('Event Deleted!')
+
   const handleExpandInfo = () => {
     setExpandedInfo(current => !current)
   }
 
   const handleSaveBtn = (eventDetails) => {
-    !eventSaved ? addToSavedEvents(eventDetails) : deleteSavedEvent(eventDetails)
+    if(eventSaved) {
+      deleteSavedEvent(eventDetails)
+      notifyDelete()
+    } else {
+      addToSavedEvents(eventDetails)
+      notifySaved()
+    }
     setEventSaved(current => !current)
   }
 
@@ -58,6 +69,7 @@ const EventDetails = ({ eventDetails, addToSavedEvents, savedEvents, deleteSaved
           </ol>
       </article>
     </section>
+    
   )
 }
 
