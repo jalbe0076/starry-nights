@@ -52,7 +52,7 @@ This is a website that informs users of upcoming celestial events by fetching da
 - Run the command: `cd sarry-nights`
 - Run the command: `npm install`
 - Run the command: `npm start`
-- Once the modules have finished compiling, enter `http://localhost:3000/starry-nights` into your browser to see the live web page. 
+- Once the modules have finished compiling, enter `http://localhost:3000/` into your browser to see the live web page. 
 - Run `npm run cypress` to run tests, the website must be running for tests to pass.
 
 
