@@ -11,10 +11,11 @@ A celestial event calendar
   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /> 
   <img src="https://img.shields.io/badge/Sass-CC6699.svg?style=for-the-badge&logo=Sass&logoColor=white" /> 
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub%20Pages-222222.svg?style=for-the-badge&logo=GitHub-Pages&logoColor=white" />
-<img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" /> 
+  <img src="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" /> 
+  <img src="https://img.shields.io/badge/npm-CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" /> 
 
-[DEPLOYED LINK](https://jalbe0076.github.io/starry-nights/) <!-- LINK TO BE ADDED ONCE DEPLOYED-->
+[DEPLOYED LINK](https://starry-nights-8xlexjx2v-jalbe0076.vercel.app/) <!-- LINK TO BE ADDED ONCE DEPLOYED-->
 </div>
 
 
@@ -25,27 +26,22 @@ This is a website that informs users of upcoming celestial events by fetching da
 
 <div align="center">
 
-  <h2> Cell Phone Display: </h2>
+  <h2> Desktop preview: </h2>
 
-  <img height="300px" src="" alt='demo of app on a cell phone'> <!-- ADD phone preview here -->
-
-  <br>  
-
-  <h2> Watch A Traler: </h2>
-
-  <img src="" alt='demo of app displaying a journal entry'> <!-- ADD journal preview here -->
+  ![Demo of app on a desktop](public/images/desktop-view.gif) <!-- ADD journal preview here -->
 
   <br>
 
-  <h2> Bad URL & Empty State: </h2>
+  <h2> Mobile preview: </h2>
 
-  <img src="" alt='demo of app showing empty search state and bad url redirect'> <!-- ADD sad path preview here -->
-
+  ![Demo of app on a cell phone](public/images/mobile-view.gif) <!-- ADD search preview here -->
+  
   <br>
 
-  <h2> Search: </h2>
+  <h2> Bad URL & Routing: </h2>
 
-  <img src="" alt='demo of app sarching viewing albums' > <!-- ADD search preview here -->
+  ![Demo of app sad paths on a desktop](public/images/desktop-view-sad.gif) <!-- ADD sad path preview here -->
+
 
 </div>
 
