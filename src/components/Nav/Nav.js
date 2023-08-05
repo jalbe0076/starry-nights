@@ -5,12 +5,12 @@ const Nav = () => {
   return (
       <nav >
         <section className='banner-container'>
-          <NavLink to='/starry-nights' className='title'><h1>STARRY NIGHTS</h1></NavLink> 
+          <NavLink to='/' className='title'><h1>STARRY NIGHTS</h1></NavLink> 
           <div className='nav-tabs'>
             <NavLink to='/stargazing-events' className='nav-links'>STARGAZING EVENTS</NavLink>
             <NavLink to='/saved-events' className='nav-links'>SAVED EVENTS</NavLink>
           </div>
-          <img src={process.env.PUBLIC_URL + '/images/user-icon.png'} className='icons' />
+          <img src={process.env.PUBLIC_URL + '/images/user-icon.png'} className='icons' alt='user icon' />
         </section>
       </nav>
   );

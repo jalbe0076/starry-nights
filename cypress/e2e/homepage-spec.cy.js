@@ -4,7 +4,7 @@ describe('As a user I should be presented with a picture of the day, it\s title 
       statusCode: 200,
       fixture: 'picture-of-day.json'
     }).as('picture')
-    cy.visit('http://localhost:3000/starry-nights')
+    cy.visit('http://localhost:3000/')
   });
   
   it('Should have a navigation bar and the picture details. Should be able to navigate to the homepage by clicking the title', () => {
@@ -17,7 +17,7 @@ describe('As a user I should be presented with a picture of the day, it\s title 
       .get('.image-of-day').should('have.attr', 'alt', 'M82: Galaxy with a Supergalactic Wind')
       .get('.image-of-day-description').contains('p', 'Why is the Cigar Galaxy billowing red smoke?')
       .get('h1').click()
-      .url('http://localhost:3000/starry-nights')
+      .url('http://localhost:3000/')
     })
   });
 
@@ -25,7 +25,7 @@ describe('As a user I should be presented with a picture of the day, it\s title 
     cy.intercept('GET', `https://api.nasa.gov/planetary/apod?api_key=${Cypress.env('REACT_APP_API_KEY')}`, {
       statusCode: 500
     })
-    cy.visit('http://localhost:3000/starry-nights')
+    cy.visit('http://localhost:3000/')
     .get('h2').contains('HTTP Error: 500 Internal Server Error')
   })
 
@@ -33,7 +33,7 @@ describe('As a user I should be presented with a picture of the day, it\s title 
     cy.intercept('GET', `https://api.nasa.gov/planetary/apod?api_key=${Cypress.env('REACT_APP_API_KEY')}`, {
       statusCode: 504
     })
-    cy.visit('http://localhost:3000/starry-nights')
+    cy.visit('http://localhost:3000/')
     .get('h2').contains('HTTP Error: 504 Gateway Timeout')
   })
 
@@ -41,7 +41,7 @@ describe('As a user I should be presented with a picture of the day, it\s title 
     cy.intercept('GET', `https://api.nasa.gov/planetary/apod?api_key=${Cypress.env('REACT_APP_API_KEY')}`, {
       statusCode: 404
     })
-    cy.visit('http://localhost:3000/starry-nights')
+    cy.visit('http://localhost:3000/')
      .get('h2').contains('HTTP Error: 404 Not Found')
   })
 

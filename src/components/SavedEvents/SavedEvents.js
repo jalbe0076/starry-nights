@@ -13,7 +13,7 @@ const SavedEvents = ({ savedEvents, handleEventList, deleteSavedEvent }) => {
     const id = nanoid();
     return (
       <div className='delete-container'  key={id}>
-        <button className='delete-event-btn' onClick={() => handleClick(event)}><img className='delete-icon' src={process.env.PUBLIC_URL + '/images/close-icon.png'} /></button>
+        <button className='delete-event-btn' onClick={() => handleClick(event)}><img className='delete-icon' src={process.env.PUBLIC_URL + '/images/close-icon.png'} alt="x symbol" /></button>
         <EventList handleEventList={handleEventList} data={event} id={id} />
       </div>
     );
