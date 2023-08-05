@@ -47,7 +47,7 @@ This is a website that informs users of upcoming celestial events by fetching da
 
 ## Installation Instructions 
 - Please apply for an API key from [NASA](https://api.nasa.gov/) to run the app locally and view/run tests. Save this key in a `.env` file located in your root directory. Save your key to the following variable `REACT_APP_API_KEY = "YOUR_KEY_GOES_HERE"`.
-- Fork [this](https://github.com/mbenfowler/sound-stash) repository. 
+- Fork [this](https://github.com/jalbe0076/starry-nights) repository. 
 - Clone it to your local machine using the command: `git clone git@github.com:jalbe0076/starry-nights.git`.
 - Run the command: `cd sarry-nights`
 - Run the command: `npm install`
