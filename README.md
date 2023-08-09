@@ -20,7 +20,7 @@ A celestial event calendar
 
 
 ## Abstract: 
-This is a website that informs users of upcoming celestial events by fetching data from the NASA API. The MVP for this project required users to browse upcoming events and save them to and delete from a list. Additional stretch features such as improving the UI by displaying the events on a calendar instead of the list and allowing users to add personal notes for events which were viewed could be some of the next features implemented into this app. 
+This is a website that informs users of upcoming celestial events by fetching data from the [NASA API](https://api.nasa.gov/). The MVP for this project required users to browse upcoming events and save them to and delete from a list. Additional stretch features such as improving the UI by displaying the events on a calendar instead of the list and allowing users to add personal notes for events which were viewed could be some of the next features implemented into this app. 
 
 ## Preview of App:
 
