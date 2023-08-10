@@ -15,7 +15,7 @@ A celestial event calendar
   <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" /> 
   <img src="https://img.shields.io/badge/npm-CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" /> 
 
-[DEPLOYED LINK](https://starry-nights.vercel.app/stargazing-events) <!-- LINK TO BE ADDED ONCE DEPLOYED-->
+[DEPLOYED LINK](https://starry-nights.vercel.app/) <!-- LINK TO BE ADDED ONCE DEPLOYED-->
 </div>
 
 
